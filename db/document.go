@@ -901,6 +901,7 @@ func (doc *Document) updateChannels(newChannels base.Set) (changedChannels base.
 					Deleted: doc.hasFlag(channels.Deleted)}
 				doc.updateChannelHistory(channel, curSequence, false)
 				changed = append(changed, channel)
+				doc.updateChannelHistory(channel, doc.Sequence, false)
 			}
 		}
 	}
