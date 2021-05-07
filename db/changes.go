@@ -263,6 +263,8 @@ func (db *Database) docRequiresRevocation(docID, chanName string, since uint64) 
 			continue
 		}
 
+		// TODO: Fix these. Use the min max check
+
 		for _, accessPeriod := range channelAccessPeriods {
 			if accessPeriod.StartSeq > since || accessPeriod.EndSeq <= since {
 				continue
